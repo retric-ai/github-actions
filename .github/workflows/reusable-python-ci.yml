@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Python and uv
-        uses: dan-petty/github-actions/actions/setup-uv@main
+        uses: retric-ai/github-actions/actions/setup-uv@main
         with:
           python-version: ${{ inputs.python-version }}
           sync-deps: "true"

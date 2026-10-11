@@ -1,4 +1,4 @@
-# GitHub Actions (`dan-petty/github-actions`)
+# GitHub Actions (`retric-ai/github-actions`)
 
 Centralized collection of reusable GitHub Actions workflows (`workflow_call`) and composite actions for consistent CI/CD pipelines across repositories.
 
@@ -12,7 +12,7 @@ Runs formatting (`ruff format`), static linting (`ruff check`), strict typecheck
 ```yaml
 jobs:
   ci:
-    uses: dan-petty/github-actions/.github/workflows/reusable-python-ci.yml@main
+    uses: retric-ai/github-actions/.github/workflows/reusable-python-ci.yml@main
     with:
       python-version: "3.14"
       min-coverage: 90
@@ -25,7 +25,7 @@ Runs GitHub Advanced Security CodeQL vulnerability scans across specified langua
 ```yaml
 jobs:
   security:
-    uses: dan-petty/github-actions/.github/workflows/reusable-codeql.yml@main
+    uses: retric-ai/github-actions/.github/workflows/reusable-codeql.yml@main
     with:
       languages: '["python", "actions"]'
 ```
@@ -36,7 +36,7 @@ Publishes official GitHub Releases with automatically generated release notes.
 ```yaml
 jobs:
   release:
-    uses: dan-petty/github-actions/.github/workflows/reusable-release.yml@main
+    uses: retric-ai/github-actions/.github/workflows/reusable-release.yml@main
     with:
       tag-name: ${{ github.ref_name }}
 ```
@@ -50,7 +50,7 @@ Installs `uv`, configures the Python runtime, and handles fast dependency cachin
 
 ```yaml
 steps:
-  - uses: dan-petty/github-actions/actions/setup-uv@main
+  - uses: retric-ai/github-actions/actions/setup-uv@main
     with:
       python-version: "3.14"
       sync-deps: "true"
@@ -61,7 +61,7 @@ Installs Kubernetes client tools (`kubectl` and `helm`) on Linux runners.
 
 ```yaml
 steps:
-  - uses: dan-petty/github-actions/actions/install-k8s-tools@main
+  - uses: retric-ai/github-actions/actions/install-k8s-tools@main
 ```
 
 ---
